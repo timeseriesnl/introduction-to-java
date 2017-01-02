@@ -169,9 +169,9 @@ public class Curriculum1 extends Curriculum<Lesson1> {
     }
 
     private void verifyAssignment11(Lesson1 lesson) {
-        if (!lesson.assignment11(true)) {
+        if (lesson.assignment11(true)) {
             throw new AssertionError("Expecting false when true is given.");
-        } else if (lesson.assignment11(false)) {
+        } else if (!lesson.assignment11(false)) {
             throw new AssertionError("Expecting true when false is given.");
         }
     }
@@ -330,7 +330,8 @@ public class Curriculum1 extends Curriculum<Lesson1> {
         if (array == null) {
             throw new AssertionError("Expecting an array with capacity for 10 Strings, got null.");
         } else if (array.length != 10) {
-            throw new AssertionError("Expecting an array with capacity for 10 Strings, got array with capacity " + array.length + ".");
+            throw new AssertionError("Expecting an array with capacity for 10 Strings," +
+                    " got array with capacity " + array.length + ".");
         }
     }
 
@@ -366,7 +367,9 @@ public class Curriculum1 extends Curriculum<Lesson1> {
         lesson.assignment26(receiver, array);
 
         if (receiver.received.size() != 10) {
-            throw new AssertionError("Expecting " + 10 + "numbers in the receiver, only received " + receiver.received.size() + " (" + receiver.received.stream().map(Object::toString).collect(Collectors.joining(", ")) + ").");
+            throw new AssertionError("Expecting " + 10 + " numbers in the receiver," +
+                    " only received " + receiver.received.size() +
+                    " (" + receiver.received.stream().map(Object::toString).collect(Collectors.joining(", ")) + ").");
         }
 
         Iterator<Integer> iterator = receiver.received.iterator();

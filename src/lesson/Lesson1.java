@@ -143,7 +143,7 @@ public class Lesson1 {
     /**
      * Return the remainder of dividing a by b.
      */
-    public int assignment17(float a, int b) {
+    public float assignment17(float a, int b) {
         return 0;
     }
 
@@ -174,7 +174,7 @@ public class Lesson1 {
      * Return "blue" when a is 3;
      * Return null otherwise.
      */
-    public String assignment20(int b) {
+    public String assignment20(int a) {
         return null;
     }
 
