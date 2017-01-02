@@ -28,20 +28,30 @@ public class Lesson1 {
      */
     public void assignment1(PrimitiveTypeReceiver receiver) {
         // Put your code here
+        receiver.namePrimitiveType("int", 50);
+        receiver.namePrimitiveType("boolean", true);
+        receiver.namePrimitiveType("char", 'A');
+        receiver.namePrimitiveType("byte", (byte)127);
+        receiver.namePrimitiveType("short", (short)32767);
+        receiver.namePrimitiveType("long", 123456789L);
+        receiver.namePrimitiveType("float", 0.1f);
+        receiver.namePrimitiveType("double", 123456789.0);
     }
 
     /**
      * Return a new Object instance.
      */
     public Object assignment2() {
-        return null; // Replace null with an actual instance.
+        Object newObject = new Object();
+        return newObject; // Replace null with an actual instance.
     }
 
     /**
      * Return a new non-empty String instance.
      */
     public String assignment3() {
-        return null;
+        String newString = new String("abc");
+        return newString;
     }
 
     /**
@@ -54,104 +64,109 @@ public class Lesson1 {
 //            fruit = "strawberry";
 //        }
 //        builder.append(fruit);
+        String fruit;
+        {
+            fruit = "strawberry";
+        }
+        builder.append(fruit);
     }
 
     /**
      * Return true if the given numbers are equal
      */
     public boolean assignment5(int a, int b) {
-        return false;
+        return a == b;
     }
 
     /**
      * Return true if the given numbers are not equal
      */
     public boolean assignment6(int a, int b) {
-        return false;
+        return a != b;
     }
 
     /**
      * Return true if a is higher than, or equal to b.
      */
     public boolean assignment7(int a, int b) {
-        return false;
+        return a >= b;
     }
 
     /**
      * Return true if a is lower than b.
      */
     public boolean assignment8(int a, int b) {
-        return false;
+        return a < b;
     }
 
     /**
      * Return true if either a or b is true.
      */
     public boolean assignment9(boolean a, boolean b) {
-        return false;
+        return a == true || b == true;
     }
 
     /**
      * Return true if both a and b are true.
      */
     public boolean assignment10(boolean a, boolean b) {
-        return false;
+        return a == true && b == true;
     }
 
     /**
      * Return the opposite boolean value
      */
     public boolean assignment11(boolean a) {
-        return false;
+        return (!a);
     }
 
     /**
      * Increment the given number by one.
      */
     public int assignment12(int a) {
-        return 0;
+        return a+1;
     }
 
     /**
      * Return a plus b.
      */
     public int assignment13(int a, int b) {
-        return 0;
+        return a + b;
     }
 
     /**
      * Return a minus b.
      */
     public int assignment14(int a, int b) {
-        return 0;
+        return a - b;
     }
 
     /**
      * Return a multiplied by b.
      */
     public int assignment15(int a, int b) {
-        return 0;
+        return a * b;
     }
 
     /**
      * Return a divided by b.
      */
     public float assignment16(float a, int b) {
-        return 0;
+        return a / b;
     }
 
     /**
      * Return the remainder of dividing a by b.
      */
     public float assignment17(float a, int b) {
-        return 0;
+        return a % b;
     }
 
     /**
      * Return a and be added together with a space between them.
      */
     public String assignment18(String a, String b) {
-        return null;
+        return a + " " + b;
     }
 
     /**
@@ -163,8 +178,16 @@ public class Lesson1 {
      * Return null otherwise.
      */
     public String assignment19(int a) {
-        return null;
+        if (a == 1){
+            return "red";}
+        else if (a == 2){
+            return "green";}
+        else if (a == 3){
+            return "blue";}
+        else
+            return null;
     }
+
 
     /**
      * Use á switch/case block to do the following:
@@ -175,6 +198,14 @@ public class Lesson1 {
      * Return null otherwise.
      */
     public String assignment20(int a) {
+        switch (a){
+            case 1:
+                return "red";
+            case 2:
+                return "green";
+            case 3:
+                return "blue";
+        }
         return null;
     }
 
@@ -182,7 +213,9 @@ public class Lesson1 {
      * Use a for loop to add integer 0 (inclusive) to 10 (exclusive) to the receiver.
      */
     public void assignment21(IntReceiver receiver) {
-
+        for (int i = 0; i < 10; i++) {
+            receiver.receive(i);
+        }
     }
 
     /**
@@ -191,7 +224,8 @@ public class Lesson1 {
      * Use a while loop to call crossing.cross() while crossing.isLightGreen() returns true.
      */
     public void assignment22(Crossing crossing) {
-
+        while (crossing.isLightGreen())
+            crossing.cross();
     }
 
     /**
@@ -200,27 +234,38 @@ public class Lesson1 {
      * Use a do/while loop to call soup.addSalt() until soup.isTasty() returns true.
      */
     public void assignment23(Soup soup) {
-
+        do {
+            soup.addSalt();
+        }while (!soup.isTasty());
     }
 
     /**
      * Create a new array that can contain 10 Strings.
      */
     public String[] assignment24() {
-        return null;
+        String [] array = new String[]{"A","B","C","A","B","C","A","b","c","a"};
+        return array;
     }
+
 
     /**
      * Create a new array of integers from 0 (inclusive) to 5 (exclusive).
      */
     public int[] assignment25() {
-        return null;
+        int [] array1 = new int [] {0,1,2,3,4};
+        return array1;
     }
+
 
     /**
      * Use an enhanced for loop to add all numbers to the receiver.
      */
     public void assignment26(IntReceiver receiver, int[] numbers) {
-
+        // int[] numbers = new int[]{12, 55, 3, 8, 0};
+        for (int number : numbers) {
+            receiver.receive(number);
+            //i++;
+            //if (i >= 10)
+        }
     }
 }
