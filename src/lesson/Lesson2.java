@@ -25,7 +25,7 @@ public class Lesson2 {
      * class.
      */
     public double assignment5(double a, double b) {
-        return Calculator.add(a, b);
+        return 0.0;
     }
 
     /**
@@ -33,7 +33,7 @@ public class Lesson2 {
      * Calculator class.
      */
     public double assignment6(double a, double b) {
-        return Calculator.subtract(a, b);
+        return 0.0;
     }
 
     /**
@@ -41,7 +41,7 @@ public class Lesson2 {
      * Calculator class.
      */
     public double assignment7(double a, double b) {
-        return Calculator.multiply(a, b);
+        return 0.0;
     }
 
     /**
@@ -49,7 +49,7 @@ public class Lesson2 {
      * Calculator class.
      */
     public double assignment8(double a, double b) {
-        return Calculator.divide(a, b);
+        return 0.0;
     }
 
     /**
@@ -198,22 +198,6 @@ public class Lesson2 {
      * Go back up and complete assignment 22.
      */
     public static class Calculator {
-
-        public static double add(double a, double b){
-            return a + b;
-        }
-
-        public static double subtract(double a, double b){
-            return a - b;
-        }
-
-        public static double multiply(double a, double b){
-            return a * b;
-        }
-
-        public static double divide(double a, double b){
-            return a / b;
-        }
 
         /**
          * Functions supported by this calculator.
