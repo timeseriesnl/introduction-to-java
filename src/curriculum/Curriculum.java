@@ -26,14 +26,17 @@ public abstract class Curriculum<T> {
         totalAssignments++;
         try {
             consumer.accept(item);
-            System.out.println(name + ": PASS");
+            System.out.printf("\u001B[1m%s: \u001B[32mPASS\u001B[0m%n", name);
             passedAssignments++;
         } catch (AssertionError e) {
-            System.out.println(name + ": FAIL");
-            System.out.println("  " + e.getMessage());
+            System.out.printf("\u001B[1m%s: \u001B[33mFAIL\u001B[0m%n" +
+                    "  %s%n", name, e.getMessage());
         } catch (RuntimeException e) {
-            System.out.println(name + ": ERROR");
+            System.out.printf("\u001B[1m%s: \u001B[31mERROR\u001B[0m%n", name);
+
+            System.out.print("\u001B[31m");
             e.printStackTrace(System.out);
+            System.out.print("\u001B[0m");
         }
     }
 }
